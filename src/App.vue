@@ -46,11 +46,18 @@ const expense = computed(() => {
 
 const handleTransactionSubmitted = (transactionData) => {
   transactions.value.push({
+    id: generateUniqueId(),
     text: transactionData.text,
     amount: transactionData.amount,
   })
 
 }
+
+//generate unique Id
+const generateUniqueId = () => {
+  return Math.floor(Math.random () * 10000000)
+}
+
 </script>
 
 <template>
